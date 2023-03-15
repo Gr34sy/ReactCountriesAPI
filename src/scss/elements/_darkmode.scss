@@ -1,16 +1,20 @@
 .darkmode{
     background-color: $very-dark-blue-1;
     color: $white;
-}
 
-.darkmode .header{
-    background-color: $dark-blue;
+    a{
+        color: $white;
+    }
 
-    -webkit-box-shadow: 0px 5px 15px  $very-dark-blue-2;
-    -moz-box-shadow: 0px 5px 15px $very-dark-blue-2;
-    box-shadow: 0px 5px 15px  $very-dark-blue-2;
-}
+    .header{
+        background-color: $dark-blue;
+    
+        -webkit-box-shadow: 0px 5px 15px  $very-dark-blue-2;
+        -moz-box-shadow: 0px 5px 15px $very-dark-blue-2;
+        box-shadow: 0px 5px 15px  $very-dark-blue-2;
+    }
 
-.darkmode .element{
-    background-color: $dark-blue;
+    .element{
+        background-color: $dark-blue;
+    }
 }
