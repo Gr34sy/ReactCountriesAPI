@@ -1,0 +1,14 @@
+:root{
+    font-size: $font-homepage-size;
+    font-family: $font;
+    color: $very-dark-blue-2;
+}
+
+.darkmode{
+    background-color: $very-dark-blue-1;
+    color: $white;
+}
+
+* {
+    box-sizing: border-box;
+}
