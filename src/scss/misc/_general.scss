@@ -4,11 +4,10 @@
     color: $very-dark-blue-2;
 }
 
-.darkmode{
-    background-color: $very-dark-blue-1;
-    color: $white;
-}
-
 * {
     box-sizing: border-box;
+}
+
+.element{
+    background-color: $white;
 }
