@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {  Outlet, Link } from "react-router-dom";
 
 export function Header(){
-    const [darkmode, setDarkmode] = useState('')
 
     useEffect(() => {
-        setDarkmode(localStorage.getItem('darkmode'));
-        if(darkmode){
+        if(localStorage.getItem('darkmode') === 'true'){
             document.querySelector('body').classList.add('darkmode');
         }
 
@@ -14,8 +12,12 @@ export function Header(){
 
     function handleDarkmode(){
         document.querySelector('body').classList.toggle('darkmode');
-        setDarkmode((prevState) => !prevState);
-        localStorage.setItem('darkmode', darkmode);
+
+        if(localStorage.getItem('darkmode') === 'true'){
+            localStorage.setItem('darkmode','false')
+        }else{
+            localStorage.setItem('darkmode','true');
+        }
     }
 
     return(
