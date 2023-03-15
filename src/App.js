@@ -2,6 +2,7 @@ import './scss/main.scss';
 
 import { Header } from './components/Header';
 import { HomePage } from './components/HomePage';
+import { Details } from './components/Details';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Header/>}>
           <Route path='/' element={<HomePage/>}/>
+          {/* <Route path={`/details`} element={<Details country={country} />}/> */}
         </Route>
       </Routes>
     </Router>
