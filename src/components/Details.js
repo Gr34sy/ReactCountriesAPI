@@ -1,14 +1,12 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect} from "react";
+import { Link, useParams  } from "react-router-dom";
 
-export function Details(nation){
-    // useEffect(() => {
-    //     document.querySelector('body').classList.toggle('darkmode');
-    // },[])
+export function Details(){
+   const { country } = useParams();
 
     return(
-        <section className="header">
-            {nation}
+        <section className="details">
+            {country}
         </section>
     )
 }
