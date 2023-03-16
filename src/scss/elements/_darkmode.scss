@@ -17,4 +17,16 @@
     .element{
         background-color: $dark-blue;
     }
+
+    .darkmode-switch{
+        color: $white;
+    }
+
+    .moon--regular{
+        display: none;
+    }
+
+    .moon--solid{
+        display: block;
+    }
 }
