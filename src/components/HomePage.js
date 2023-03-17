@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 import { CountryBox } from "./CountryBox";
+import { SearchInput } from "./SearchInput";
 
 export function HomePage(){
     const [countries,setCountries] = useState([]);
@@ -30,6 +31,9 @@ export function HomePage(){
 
     return(
         <main className="hero">
+
+            <SearchInput/>
+            
             <div className='wrapper'>
                 {/* {countries.map((country, i) => (<CountryBox
                 key={i}
