@@ -1,12 +1,10 @@
 .country-box{
-    width: 300px;
-    height: 300px; 
+    width: 320px;
+    height: 320px; 
 
     border-radius: 5px;
 
-    -webkit-box-shadow: 0px 0px 20px 0px $dark-gray;
-    -moz-box-shadow: 0px 0px 20px 0px $dark-gray;
-    box-shadow: 0px 0px 20px 0px $dark-gray;
+    @include box-shadow;
 }
 
 .country__flag{

@@ -6,9 +6,16 @@
     }
 }
 
+.inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
 .wrapper{
     display: flex;
-    gap: 25px 40px;
+    gap: 30px 60px;
     justify-content: center;
     flex-wrap: wrap;
 }

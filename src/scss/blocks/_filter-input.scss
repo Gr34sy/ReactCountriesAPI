@@ -1,0 +1,39 @@
+.filter-input__container{
+    position: relative;
+
+    @include box-shadow;
+}
+
+button.filter-input__button{
+    padding: 25px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-input__container, .filter-input__button, .filter-input__radios{
+    border-radius: 5px;
+}
+
+
+.filter-input__radios{
+    padding: 15px;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+
+    @include box-shadow;
+
+    *{
+        display: block;
+    }
+
+    label{
+        cursor: pointer;
+        padding-block: 9px;
+        font-weight: 600;
+    }
+}
+
+input[type="radio"]{
+    appearance: none;
+}
