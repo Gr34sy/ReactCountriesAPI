@@ -1,0 +1,14 @@
+.hero{
+    padding: 50px 20px;
+    
+    @media(min-width: 650px){
+        padding: 50px;
+    }
+}
+
+.wrapper{
+    display: flex;
+    gap: 25px 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}

@@ -29,4 +29,10 @@
     .moon--solid{
         display: block;
     }
+
+    .country-box{
+        -webkit-box-shadow: 0px 0px 10px 0 $very-dark-blue-2;
+        -moz-box-shadow: 0px 0px 10px 0 $very-dark-blue-2;
+        box-shadow: 0px 0px 10px 0 $very-dark-blue-2;
+    }
 }

@@ -1,7 +1,11 @@
 :root{
     font-size: $font-homepage-size;
+}
+
+body{
     font-family: $font;
     color: $very-dark-blue-2;
+    background-color: $very-light-gray;
 }
 
 * {
