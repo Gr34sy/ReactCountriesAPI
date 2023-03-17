@@ -7,15 +7,24 @@
 
 .search-input__icon{
     display: inline-block;
-    padding-inline: 30px 10px;
+    padding-inline: 25px 10px;
     font-size: 1.2rem;
+    width: 15%;
+
+    @media (min-width: 700px) {
+        width: auto;
+    }
 }
 
 .search-input__input{
     border: none;
-    width: 350px;
+    width: 85%;
     padding: 25px 10px;
     border-radius: 5px;
+
+    @media (min-width: 700px) {
+        width: 350px;
+    }
 }
 
 .search-input__icon,.search-input__input{

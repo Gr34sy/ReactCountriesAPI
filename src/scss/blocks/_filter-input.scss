@@ -8,6 +8,14 @@ button.filter-input__button{
     padding: 25px 15px;
     border: none;
     cursor: pointer;
+    width: 100%;
+    text-align: left;
+
+    @media (min-width: 700px) {
+        min-width: 100px;
+        text-align: center;
+        width: auto;
+    }
 }
 
 .filter-input__container, .filter-input__button, .filter-input__radios{
@@ -16,8 +24,8 @@ button.filter-input__button{
 
 
 .filter-input__radios{
-    padding: 15px;
     position: absolute;
+    z-index: 2;
     top: 80px;
     width: 100%;
 
@@ -29,7 +37,7 @@ button.filter-input__button{
 
     label{
         cursor: pointer;
-        padding-block: 9px;
+        padding: 10px 15px;
         font-weight: 600;
     }
 }
