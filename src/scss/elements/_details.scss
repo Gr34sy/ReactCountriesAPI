@@ -1,0 +1,61 @@
+.details{
+    padding: 60px 80px;
+}
+
+.details__button{
+    padding: 10px 30px;
+    border-radius: 5px;
+
+    svg{
+        padding-right: 10px;
+    }
+
+    @include box-shadow;
+}
+
+.details__container{
+    margin-top: 80px;
+    display: flex;
+
+    figure{
+        width: 650px;
+        height: 450px;
+        background-color: aqua;
+    }
+}
+
+.details__description{
+    padding-top: 50px;
+    padding-left: 80px;
+
+    p{
+        font-size: 1rem;
+        font-weight: 300;
+        padding-block: 10px;
+
+        span{
+            font-weight: 600;
+            padding-right: 10px;
+        }
+    }
+}
+
+.details__title{
+    font-size: 2rem;
+    font-weight: 800;
+    padding-bottom: 40px;
+}
+
+.description__columns{
+    display: flex;
+    gap: 100px;
+}
+
+.details__border-countries{
+    padding-top: 60px;
+}
+
+.button--countries{
+    border-radius: 0;
+    margin-left: 20px;
+}
