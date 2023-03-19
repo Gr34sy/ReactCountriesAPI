@@ -2,6 +2,7 @@ import React, { useEffect, useState} from "react";
 import { Link, useParams  } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {BorderCountry} from "./BorderCountry";
 
 export function Details(){
    const [ countryInfo, setCountryInfo] = useState(null)
@@ -10,7 +11,7 @@ export function Details(){
 
    //adding ',' to population number
    function changePopulationFormat(population){
-        return [...population.toString()].reverse().map((el,i) => i%3===0 ? el + ',' : el).reverse().map((el, i, arr) => i != arr.length-1 && el != ',' ?el : el.replace(',',''))
+        return [...population.toString()].reverse().map((el,i) => i%3===0 ? el + ',' : el).reverse().map((el, i, arr) => i !== arr.length-1 && el !== ',' ?el : el.replace(',',''))
     }
 
    //function that gets all properties of nested objects
@@ -22,12 +23,13 @@ export function Details(){
       }
       getPropValuesAll(obj[k], result)
     }
+
     return result
   }
 
    useEffect(() => {
         try{
-            fetch(`https://restcountries.com/v3.1/name/${country}?fullText=tr`)
+            fetch(`https://restcountries.com/v3.1/alpha/${country}`)
             .then((response) => response.json())
             .then((response) => {
                 console.log(response)
@@ -45,7 +47,7 @@ export function Details(){
                     subRegion: data.subregion,
                     capital: data.capital ? `${data.capital}` : data.name.name,
                     tld: typeof data.tld == 'string' ? data.tld : data.tld[0],
-                    currencies: getPropValuesAll(data.currencies).map((el) => el + ' ').filter((currency, i)=> i % 2 == 0),
+                    currencies: getPropValuesAll(data.currencies).map((el) => el + ' ').filter((currency, i)=> i % 2 === 0),
                     languages: getPropValuesAll(data.languages).map((el) => el + ' '),
                     borderCountries: data.borders, //zmienic
                 };
@@ -56,7 +58,7 @@ export function Details(){
             console.error(err);
         }
 
-        return setCountryInfo(null);
+        return () => setCountryInfo(null);
    }, [])
 
     return(
@@ -64,7 +66,7 @@ export function Details(){
             <Link to="/" className="details__button"><FontAwesomeIcon icon={faArrowLeft}/> Back</Link>
             {countryInfo && <article className="details__container">
                 <figure>
-                    <img src={countryInfo.flag} alt={countryInfo.flagAlt}/>
+                    <img src={countryInfo.flag} alt={countryInfo.flagAlt} className="details__flag"/>
                 </figure>
 
                 <div className="details__description">
@@ -90,10 +92,10 @@ export function Details(){
                     </div>
 
                     <div className="details__border-countries">
-                        <p><span>Border Countries:</span> 
-                            <Link to="/" className="details__button button--countries">Country</Link>
-                            <Link to="/" className="details__button button--countries">Country</Link>
-                            <Link to="/" className="details__button button--countries">Country</Link> 
+                        <p><span>Border Countries:</span>
+                            {countryInfo.borderCountries.map((country, i) => {
+                                return <BorderCountry key={i} countryCode={country}/>
+                            })}
                         </p>
                     </div>
                 </div>

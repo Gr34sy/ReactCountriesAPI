@@ -9,7 +9,7 @@ export function HomePage(){
 
     // adding ',' to population number
     function changePopulationFormat(population){
-        return [...population.toString()].reverse().map((el,i) => i%3===0 ? el + ',' : el).reverse().map((el, i, arr) => i != arr.length-1 && el != ',' ?el : el.replace(',',''))
+        return [...population.toString()].reverse().map((el,i) => i%3===0 ? el + ',' : el).reverse().map((el, i, arr) => i !== arr.length-1 && el !== ',' ?el : el.replace(',',''))
     }
 
     useEffect(() => {
@@ -23,6 +23,7 @@ export function HomePage(){
                 })
                 .then((data) => data.map((country) => {
                     return {
+                        code: country.cca2,
                         name: country.name.common,
                         officialName: country.name.official,
                         population: changePopulationFormat(country.population),
@@ -51,6 +52,7 @@ export function HomePage(){
             <div className='wrapper'>
                 {countries.map((country, i) => (<CountryBox
                 key={i}
+                code={country.code}
                 name={country.name} 
                 officialName={country.officialName}
                 population={country.population}

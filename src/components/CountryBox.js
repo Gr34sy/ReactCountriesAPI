@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export function CountryBox({flag, flagAlt, name, officialName, population, region, capital}){
+export function CountryBox({code, flag, flagAlt, name, officialName, population, region, capital}){
 
     return(
-        <Link to={`/country/${name}`} className="element country-box">
+        <Link to={`/country/${code}`} className="element country-box">
             <img className="country__flag" src={flag} alt={flagAlt}/>
 
             <h2 className="country__name">

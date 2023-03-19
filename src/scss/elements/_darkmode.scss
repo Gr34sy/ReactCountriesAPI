@@ -30,7 +30,7 @@
         display: block;
     }
 
-    .country-box, .search-input__container, .filter-input__radios, .filter-input__container, .details__button, .details__container figure{
+    .country-box, .search-input__container, .filter-input__radios, .filter-input__container, .details__button, .details__flag{
         @include box-shadow-darkmode
     }
 }
