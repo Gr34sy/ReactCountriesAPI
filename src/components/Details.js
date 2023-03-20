@@ -67,7 +67,7 @@ export function Details(){
                     tld: getTLD(data.tld),
                     currencies: getPropValuesAll(data.currencies).map((el) => el + ' ').filter((currency, i)=> i % 2 === 0),
                     languages: getPropValuesAll(data.languages).map((el) => el + ' '),
-                    borderCountries: data.borders, //zmienic
+                    borderCountries: data.borders ? data.borders : '', //zmienic
                 };
                 setCountryInfo(country);
                 console.log(country);
@@ -76,7 +76,7 @@ export function Details(){
             console.error(err);
         }
 
-        return () => setCountryInfo(null);
+        return setCountryInfo(null);
    }, [rerenderDetails]);
 
     return(
@@ -111,9 +111,11 @@ export function Details(){
 
                     <div className="details__border-countries">
                         <p><span>Border Countries:</span>
-                            {countryInfo.borderCountries.map((country, i) => {
+                            {countryInfo.borderCountries ? 
+                            countryInfo.borderCountries.map((country, i) => {
                                 return <BorderCountry key={i} countryCode={country} rerender={handleRerender}/>
-                            })}
+                            }) 
+                            : 'none'}
                         </p>
                     </div>
                 </div>

@@ -5,7 +5,8 @@ import { SearchInput } from "./SearchInput";
 import { FilterInput } from "./FilterInput";
 
 export function HomePage(){
-    const [countries,setCountries] = useState([]);
+    const [countries, setCountries] = useState([]);
+    const [countriesAll, setCountriesAll] = useState([]);
 
     // adding ',' to population number
     function changePopulationFormat(population){
@@ -33,7 +34,10 @@ export function HomePage(){
                         flagAlt: country.flags.alt,
                     } 
                 }))
-                .then((mappedData) => setCountries(mappedData))
+                .then((mappedData) => {
+                    setCountries(mappedData);
+                    setCountriesAll(mappedData);
+                })
         }catch(error){
             console.error(error);
         }
@@ -41,12 +45,19 @@ export function HomePage(){
         return setCountries([]);
     }, [])
 
+    function searchChange(e){
+        if(e.target.value === '' || e.target.value === ' '){
+            setCountries([...countriesAll]);
+        }
+        setCountries(countriesAll.filter((country) => country.name.includes(e.target.value)));
+    }
+
     return(
         <main className="hero">
 
             <div className="inputs">
-                <SearchInput/>
-                <FilterInput/>
+                <SearchInput onChange={searchChange}/>
+                <FilterInput />
             </div>
 
             <div className='wrapper'>

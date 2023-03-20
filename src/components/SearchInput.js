@@ -1,16 +1,18 @@
-import React, {useState} from "react";
+import React from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 
-export function SearchInput(){
+export function SearchInput({onChange}){
 
-    const [searchInputValue, setSearchInputValue] = useState('');
 
     function handleSearchChange(e){
         e.preventDefault();
-        setSearchInputValue(e.target.value);
+        
+        if( typeof onChange === 'function'){
+            onChange(e);
+        }
     }
 
     return(
@@ -18,7 +20,7 @@ export function SearchInput(){
             <div className="search-input__icon">
                 <FontAwesomeIcon icon={faMagnifyingGlass}/>
             </div>
-            <input type="text" className="element search-input__input" onChange={handleSearchChange} value={searchInputValue}/>
+            <input type="text" className="element search-input__input" onChange={handleSearchChange}/>
         </div>
     )
 }
