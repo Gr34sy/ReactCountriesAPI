@@ -6,6 +6,8 @@ import {BorderCountry} from "./BorderCountry";
 
 export function Details(){
    const [ countryInfo, setCountryInfo] = useState(null)
+   const [rerenderDetails, setRerenderDetails] = useState(0);
+
    const { country } = useParams();
 
 
@@ -27,6 +29,22 @@ export function Details(){
     return result
   }
 
+  //getting tld
+  function getTLD(data){
+    if(typeof data === 'string'){
+        return data;
+    }else if(Array.isArray(data)){
+        return data[0];
+    }else{
+        return 'none';
+    }
+  }
+
+  //rerender function
+  function handleRerender(){
+    setRerenderDetails((prevState) => !prevState);
+  }
+
    useEffect(() => {
         try{
             fetch(`https://restcountries.com/v3.1/alpha/${country}`)
@@ -46,7 +64,7 @@ export function Details(){
                     region: data.region,
                     subRegion: data.subregion,
                     capital: data.capital ? `${data.capital}` : data.name.name,
-                    tld: typeof data.tld == 'string' ? data.tld : data.tld[0],
+                    tld: getTLD(data.tld),
                     currencies: getPropValuesAll(data.currencies).map((el) => el + ' ').filter((currency, i)=> i % 2 === 0),
                     languages: getPropValuesAll(data.languages).map((el) => el + ' '),
                     borderCountries: data.borders, //zmienic
@@ -59,7 +77,7 @@ export function Details(){
         }
 
         return () => setCountryInfo(null);
-   }, [])
+   }, [rerenderDetails]);
 
     return(
         <section className="details">
@@ -94,7 +112,7 @@ export function Details(){
                     <div className="details__border-countries">
                         <p><span>Border Countries:</span>
                             {countryInfo.borderCountries.map((country, i) => {
-                                return <BorderCountry key={i} countryCode={country}/>
+                                return <BorderCountry key={i} countryCode={country} rerender={handleRerender}/>
                             })}
                         </p>
                     </div>
