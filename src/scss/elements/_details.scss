@@ -1,5 +1,9 @@
 .details{
-    padding: 60px 80px;
+    padding: 40px 30px;
+
+    @media(min-width: 750px){
+        padding: 60px 80px;
+    }
 }
 
 .details__button{
@@ -16,11 +20,28 @@
 .details__container{
     margin-top: 80px;
     display: flex;
+    flex-direction: column;
 
     figure{
-        width: 650px;
-        height: 450px;
+        width: 100%;
+        height: auto;
     }
+
+    @media(min-width: 750px){
+        figure{
+            width: 70%;
+        }
+    }
+
+    @media(min-width: 1150px){
+        flex-direction: row;
+
+        figure{
+            width: 650px;
+            height: 450px;
+        }
+    }
+
 }
 
 .details__flag{
@@ -31,8 +52,19 @@
 }
 
 .details__description{
-    padding-top: 50px;
-    padding-left: 80px;
+    @media(min-width: 1150px){
+        padding-left: 80px;
+    }
+
+    @media(min-width: 1450px){
+        padding-top: 50px;
+    }
+}
+
+.description__columns{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 
     p{
         display: flex;
@@ -47,26 +79,31 @@
             padding-right: 10px;
         }
     }
+
+    @media(min-width: 750px){
+        flex-direction: row;
+    }
 }
 
 .details__title{
     font-size: 2rem;
     font-weight: 800;
-    padding-bottom: 40px;
-}
+    padding-block: 30px 20px;
 
-.description__columns{
-    display: flex;
-    gap: 100px;
+    @media(min-width: 1150px){
+        padding-block: 0 40px;
+    }
 }
 
 .details__border-countries{
     padding-top: 30px;
+    width: 100%;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .button--countries{
     border-radius: 0;
-    margin-left: 20px;
 }

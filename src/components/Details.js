@@ -110,13 +110,11 @@ export function Details(){
                     </div>
 
                     <div className="details__border-countries">
-                        <p><span>Border Countries:</span>
-                            {countryInfo.borderCountries ? 
-                            countryInfo.borderCountries.map((country, i) => {
-                                return <BorderCountry key={i} countryCode={country} rerender={handleRerender}/>
-                            }) 
-                            : 'none'}
-                        </p>
+                        <p>Border Countries:</p>
+                        {countryInfo.borderCountries 
+                        ? countryInfo.borderCountries.map((country, i) => {
+                        return <BorderCountry key={i} countryCode={country} rerender={handleRerender}/>}) 
+                        : 'none'}
                     </div>
                 </div>
             </article>}
