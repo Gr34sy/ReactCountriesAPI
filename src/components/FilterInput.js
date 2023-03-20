@@ -1,25 +1,36 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
-
-
-export function FilterInput(){
+export function FilterInput({onChange}){
     const [filterInputValue, setFilterInputValue] = useState('');
 
     function displayRadio(e){
         e.preventDefault();
         document.querySelector('.filter-input__radios').classList.toggle('display-none');
+        document.querySelector('.caretDown').classList.toggle('display-none');
+        document.querySelector('.caretUp').classList.toggle('display-none');
     }
 
     function handleFilterChange(e){
+        e.preventDefault();
         setFilterInputValue(e.target.value);
     }
+
+    useEffect(() => {
+        if(typeof onChange === 'function'){
+            onChange(filterInputValue);
+        }
+    },[filterInputValue])
 
     return(
         <div className="element filter-input__container">
            <button className="element filter-input__button" onClick={displayRadio}> 
-                {filterInputValue ? `${filterInputValue}` : 'Filter by Region'}  
+                {filterInputValue ? `${filterInputValue}` : 'Filter by Region'}
+                <FontAwesomeIcon icon={faCaretDown} className="filterIcon caretDown display-none"/>
+                <FontAwesomeIcon icon={faCaretUp} className="filterIcon caretUp"/>
            </button>
            
            <div className="element filter-input__radios display-none">

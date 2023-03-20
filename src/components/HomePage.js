@@ -48,8 +48,17 @@ export function HomePage(){
     function searchChange(e){
         if(e.target.value === '' || e.target.value === ' '){
             setCountries([...countriesAll]);
+        }else{
+            setCountries(countriesAll.filter((country) => country.name.toLowerCase().includes(e.target.value.toLowerCase())));
         }
-        setCountries(countriesAll.filter((country) => country.name.includes(e.target.value)));
+    }
+
+    function filterChange(inputValue){
+        if(inputValue === ''){
+            setCountries([...countriesAll])
+        }else{
+            setCountries(countriesAll.filter((country) => country.region.match(inputValue)));
+        }
     }
 
     return(
@@ -57,7 +66,7 @@ export function HomePage(){
 
             <div className="inputs">
                 <SearchInput onChange={searchChange}/>
-                <FilterInput />
+                <FilterInput onChange={filterChange}/>
             </div>
 
             <div className='wrapper'>
