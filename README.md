@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# ToDo App created with NextJS and MongoDB
+## The app faciliates the organisation of everyday life or long-term plans to its users. It provides ability to manage time better with tasklists and simple lists.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### The app was created in order to learn NextJS functionalities in a practical way. User can log in with google or github account. Then he is able to view, create, edit and delete simple todo lists or more complex tasklists. User can also change color theme according to his preferences.
 
-In the project directory, you can run:
+#### Technologies used in the app:
+<img  align="left" alt="Next" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" style="padding-right:10px;"/>
+<img align="left" alt="MongoDB" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" style="padding-right:10px;" />
+<img align="left" alt="React" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />
+<img align="left" alt="Sass" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" style="padding-right:10px;" />
 
-### `npm start`
+<br/> <br/> <br/> 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Next Features used in the app:
+<p>-> OAuth</p>
+<p>-> ServerSide Generation</p>
+<p>-> Api Routes</p>
+<p>-> Next Image Component</p>
+<p>-> File Based Routing</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br/> <br/> <br/> 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### App User Guide:
+<p>1. Creating List:</p>
+<p>-> Go to ListCreator</p>
+<p>-> Enter needed information and click save, app will reload and redirect you to the homepage</p>
+<br/>
+<p>2. List view and editing:</p>
+<p>-> On homepage click on the list which you want to open</p>
+<p>-> You will be redirected to specific list page</p>
+<p>-> From there you can edit the title and tasks (also deadline and description if you are editing tasklist)</p>
+<p> -> To discard changes, click "Discard" button then the page will be reloaded and the changes will be cancelled</p>
+<p>-> To save, click "Save" button, then the page also will be reloaded, but the changes will be saved to the database</p>
+<br/>
+<p>3. List deleting:</p>
+<p> -> Go to homepage</p>
+<p> -> Click the red, trash icon of the list you want to delete</p>
+<p> -> Then the popup will be displayed</p>
+<p> -> If you are sure to delete the item, click "Yes" button on the popup window</p>
+<br/>
+<p>4. Adding Task to Tasklist</p>
+<p> -> On specific tasklist page, click on the "Add Task" accordion component</p>
+<p> -> Fill in the inputs, add operations and click Cancel/Add, then the page will be reloaded</p>
+<br/>
+<p> 5. Theme Changes:</p>
+<p> -> Go to options page</p>
+<p> -> Choose the theme options tab</p>
+<p> -> Select preferred color motive</p>
+<p> -> Discard changes or save it to the database</p>
+<br/>
+<p>6. Logging Out:</p>
+<p> -> Go to options page</p>
+<p> -> Choose the log out tab</p>
+<p> -> Confirm log out</p>
+<br/><br/><br/>
+PS: I'know that the code is not as clean as it should be. </p>
