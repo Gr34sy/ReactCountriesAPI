@@ -19,7 +19,8 @@
 
 #### App Functionalities:
 <p>1. Creating List:</p>
-<p>-> User can filter through countries list by continents.</p>
+<p>-> User can search countries by name.</p>
+<p>-> User can filter countries by continents.</p>
 <p>-> User can click on specific country in order to display details</p>
 <p>-> User can switch between nightmode and lightmode</p>
 
