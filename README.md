@@ -1,4 +1,4 @@
-# ToDo App created with React and Rest Countries API
+# App created with React and Rest Countries API
 ## The app enables users to search for specific country and then view its details
 
 
